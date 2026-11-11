@@ -5,7 +5,7 @@ library(haven)
 library(stringr)
 library(tidyr)
 
-# Run from the project root, e.g. setwd('/Users/you/africa_merge_pipeline')
+# Run from the project root, e.g. setwd('/Users/you/Manda_ChurchandState_Replication')
 if (!file.exists('config/crosswalk.csv')) stop('Set working directory to africa_merge_pipeline')
 dir.create('outputs', showWarnings = FALSE)
 
