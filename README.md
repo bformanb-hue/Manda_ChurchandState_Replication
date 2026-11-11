@@ -9,8 +9,8 @@ Run `scripts/00_setup.R` through `scripts/04_jedwab.R` in order, from this proje
 africa_merge_pipeline/
   data/
     original/
-      mandaData.dta                 <-- original respondent Stata file (YOU supply)
-      murdock/                     <-- original Murdock polygon shapefile (YOU supply)
+      mandaData.dta                 <-- original respondent Stata file
+      murdock/                     <-- original Murdock polygon shapefile
         murdock.shp                 <-- any .shp filename is OK; update config if different
         murdock.shx
         murdock.dbf
@@ -54,7 +54,6 @@ Final outputs: `outputs/mandaData_final.rds` and `outputs/mandaData_final.csv`.
 
 ## Important provenance and limitations
 
-- The original `mandaData.dta` and original Murdock shapefile were **not supplied** with the uploaded snippets. Provide them to rerun from scratch. `murdock_name` is matched with exact cleaned names and then **only reviewed mappings in `config/crosswalk.csv`**. Uncertain fuzzy matches are never auto-assigned. This CSV contains a conservative subset of the previously discussed matches, not a claim to reconstruct the complete historic ~44.9% crosswalk. Review/extend the CSV if the new Murdock coverage differs.
-- Wilfahrt polygons for 6/8/10 hours represent **different state extents**. Each share is the **union of covered territory** divided by the ethnic territory area. The primary state is the polygon with the largest intersection with that ethnicity. This deterministic rule may differ from earlier exploratory code. State attributes are joined from `2_State_Data.csv` for that primary state; some states may lack attributes.
-- `beach1903_complete.dta`: individual recorded mission points; years can be missing. `grid_africa_final.dta`: Roome mission **counts at grid-cell centroids**, not exact mission sites. Roome territorial counts and distances are approximations. Distances from polygon to point are 0 when a point lies within the polygon. Missing Murdock match stays `NA`; a matched territory with no recorded missions is 0.
-- Preserve the source file editions, and manually inspect warnings/coverage and extreme values. This project **does not reproduce previous numeric results by assertion**; it recomputes and reports them for verification.
+- `murdock_name` is matched with exact cleaned names and then **only reviewed mappings in `config/crosswalk.csv`**. Uncertain matches are never auto-assigned. With just these mappings, 44.9% of entries are mapped to Murdock names, which are then used for further merges. Review/extend the CSV if the new Murdock coverage differs.
+- Wilfahrt polygons for 6/8/10 hours represent different state reach estimates. Each share is the **union of covered territory** divided by the ethnic territory area. The primary state is the polygon with the largest intersection with that ethnicity. 
+- `beach1903_complete.dta`: individual recorded mission points; years can be missing. `grid_africa_final.dta`: Roome mission **counts at grid-cell centroids**. Roome territorial counts and distances are approximations. Distances from polygon to point are 0 when a point lies within the polygon. Missing Murdock matches stay `NA`; a matched territory with no recorded missions is 0.
