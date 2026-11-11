@@ -1,5 +1,5 @@
 # African ethnicity merge pipeline
-# AI Disclosure: ChatGPT was used for programming assistance on this project
+AI Disclosure: ChatGPT was used for programming assistance in the creation of the final dataset for this project
 
 Run `scripts/00_setup.R` through `scripts/04_jedwab.R` in order, from this project folder. A fresh R session is fine: each stage reads the preceding stage's `.rds` output.
 
