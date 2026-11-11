@@ -3,6 +3,12 @@
 
 Run `scripts/00_setup.R` through `scripts/04_jedwab.R` in order, from this project folder. A fresh R session is fine: each stage reads the preceding stage's `.rds` output.
 
+Jedwab Data: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/6XOWFT
+
+Wilfahrt Data: https://github.com/martha-wilfahrt/atlas-precolonial-african-states/tree/main/data/3_Atlas%20of%20Africa's%20Centralized%20States/3a_Final%20Data
+
+Use data/2_State_Data.csv and all files in data/3_Atlas of Africa's Centralized States/3a_Final Data/
+
 ## Put your original files here
 
 ```text
